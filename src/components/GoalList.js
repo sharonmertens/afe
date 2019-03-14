@@ -7,6 +7,7 @@ class GoalList extends Component {
     return (
       <div className="goal-list">
         this is the goal list component
+        <Goal />
       </div>
     )
   }

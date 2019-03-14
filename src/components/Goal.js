@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Goal extends Component {
   render () {
-    retrun (
+    return (
       <div className="goal">
         this is the goal component
       </div>
@@ -10,4 +10,4 @@ class Goal extends Component {
   }
 }
 
-export default Goal 
+export default Goal
