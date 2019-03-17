@@ -1,35 +1,40 @@
 import React, { Component } from 'react';
 
 import Header from './components/Header'
-import GoalList from './components/GoalList'
+import RecipeList from './components/RecipeList'
 import Form from './components/Form'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      goals: []
+      recipes: []
     }
   }
 
   // fetching our api data
-  fetchGoals = () => {
-    console.log('fetch goals is running')
-    fetch('http://localhost:3000/goals')
+  fetchRecipes = () => {
+    console.log('fetch recipes is running')
+    fetch('http://localhost:3000/recipes')
     .then(data => data.json())
     .then(jData => {
-      this.setState({ goals: jData })
+      this.setState({ recipes: jData })
     })
+  }
+
+  // component did mount life cycle
+  componentDidMount() {
+    this.fetchRecipes()
   }
 
   render() {
     // this.fetchGoals()
     return (
       <div className="main-container">
-        <h1>Accountability Frontend</h1>
+        <h1>Recipes Frontend</h1>
         <Header />
         <Form />
-        <GoalList />
+        <RecipeList />
       </div>
     )
   }
