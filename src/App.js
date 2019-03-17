@@ -34,7 +34,7 @@ class App extends Component {
         <h1>Recipes Frontend</h1>
         <Header />
         <Form />
-        <RecipeList />
+        {this.state.recipes[0] ? <RecipeList recipes={this.state.recipes}/> : '' }
       </div>
     )
   }

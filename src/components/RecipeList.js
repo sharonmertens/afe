@@ -7,7 +7,15 @@ class RecipeList extends Component {
     return (
       <div className="recipe-list">
         this is the recipe list component
-        <Recipe />
+        { this.props.recipes.map((recipe, index) => {
+          return (
+            <Recipe
+              recipe={recipe}
+              key={index}
+            />
+          )
+        })}
+
       </div>
     )
   }
