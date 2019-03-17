@@ -6,6 +6,7 @@ class Recipe extends Component {
       <div className="recipe">
         <h3>Description: {this.props.recipe.description}</h3>
         <h3>Ingredients: {this.props.recipe.ingredients}</h3>
+        <h3>Directions: {this.props.recipe.directions}</h3>
         <br/>
       </div>
     )

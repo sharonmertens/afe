@@ -5,7 +5,8 @@ class Form extends Component {
     super(props)
     this.state = {
       description: '',
-      ingredients: ''
+      ingredients: '',
+      directions: ''
     }
   }
 
@@ -27,7 +28,8 @@ class Form extends Component {
   clearForm = () => {
     this.setState({
       description: '',
-      ingredients: ''
+      ingredients: '',
+      directions: ''
     })
   }
 
@@ -48,6 +50,14 @@ class Form extends Component {
             placeholder="ingredients"
             id="ingredients"
             value={this.state.ingredients}
+            onChange={this.handleChange}
+          />
+          <br/>
+          <input
+            type="text"
+            placeholder="directions"
+            id="directions"
+            value={this.state.directions}
             onChange={this.handleChange}
           />
           <br/>
