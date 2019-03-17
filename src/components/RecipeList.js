@@ -12,6 +12,8 @@ class RecipeList extends Component {
             <Recipe
               recipe={recipe}
               key={index}
+              arrayIndex={index}
+              handleCheck={this.props.handleCheck}
             />
           )
         })}

@@ -44,6 +44,14 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  // handles updating the recipe
+  handleCheck = (recipe, arrayIndex) => {
+    // console.log(recipe)
+    // console.log(arrayIndex)
+    this.editRecipe(recipe, arrayIndex)
+
+  }
+
   // update state of array
   updateArray = (recipe, array) => {
     // console.log(recipe)
@@ -57,14 +65,45 @@ class App extends Component {
       }
     })
   }
-  
+
+  // remove a recipe from array
+  removeFromArray = (array, arrayIndex) => {
+    this.setState( prevState => {
+      console.log(prevState[array])
+      prevState[array].splice(arrayIndex, 1)
+      return {
+        [array]: prevState[array]
+      }
+    })
+  }
+
+  // edit recipe
+  editRecipe = (recipe, index) => {
+    console.log(JSON.stringify(recipe))
+    fetch(`http://localhost:3000/recipes/${recipe._id}`, {
+      body: JSON.stringify(recipe),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(updatedRecipe => {
+      return updatedRecipe.json()
+    })
+    .then(jData => {
+      console.log(jData)
+      this.fetchRecipes()
+    })
+    .catch(err => console.log(err))
+  }
+
   // component did mount life cycle
   componentDidMount() {
     this.fetchRecipes()
   }
 
   render() {
-    // this.fetchGoals()
     return (
       <div className="main-container">
         <h1>Recipes Frontend</h1>
@@ -72,7 +111,11 @@ class App extends Component {
         <Form
           handleCreateRecipe={this.handleCreateRecipe}
         />
-        {this.state.recipes[0] ? <RecipeList recipes={this.state.recipes}/> : '' }
+        <RecipeList
+          recipes={this.state.recipes}
+          handleCheck={this.handleCheck}
+          currentArray="recipes"
+        />
       </div>
     )
   }
