@@ -45,6 +45,7 @@ class Recipe extends Component {
 
         { /* button click changes static state to false to show edit component */}
         <button onClick={this.changeStaticState}>Edit Recipe</button>
+        <button onClick={() => this.props.handleDelete(this.props.recipe._id, this.props.arrayIndex, this.props.currentArray)}>Delete Post</button>
 
         </div> :
 

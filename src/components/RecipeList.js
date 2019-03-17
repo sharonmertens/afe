@@ -14,6 +14,8 @@ class RecipeList extends Component {
               key={index}
               arrayIndex={index}
               handleCheck={this.props.handleCheck}
+              handleDelete={this.props.handleDelete}
+              currentArray="recipes"
             />
           )
         })}

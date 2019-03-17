@@ -98,6 +98,17 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  // delete recipe
+  handleDelete = (_id, arrayIndex, currentArray) => {
+    fetch(`http://localhost:3000/recipes/${_id}`, {
+      method: 'DELETE'
+    })
+    .then(data => {
+      this.removeFromArray(currentArray, arrayIndex)
+    })
+    .catch(err => console.log(err))
+  }
+
   // component did mount life cycle
   componentDidMount() {
     this.fetchRecipes()
@@ -114,6 +125,7 @@ class App extends Component {
         <RecipeList
           recipes={this.state.recipes}
           handleCheck={this.handleCheck}
+          handleDelete={this.handleDelete}
           currentArray="recipes"
         />
       </div>
