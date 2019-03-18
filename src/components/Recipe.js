@@ -38,7 +38,7 @@ class Recipe extends Component {
 
         <div className="recipe-show">
         { /* if static state is true, show the 'show' state recipe */}
-        <h3>Name: {this.props.recipe.name}</h3>
+        <h3 onClick={() => this.props.showRecipe(this.props.recipe._id)}>Name: {this.props.recipe.name}</h3>
         <h3>Ingredients: {this.props.recipe.ingredients}</h3>
         <h3>Directions: {this.props.recipe.directions}</h3>
         <br/>

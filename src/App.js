@@ -22,6 +22,16 @@ class App extends Component {
     })
   }
 
+  // show recipe
+  showRecipe = (recipe) => {
+    console.log('show recipe is running')
+    fetch(`http://localhost:3000/recipes/${recipe}`)
+    .then(data => data.json())
+    .then(jData => {
+      console.log(jData)
+    })
+  }
+
   // creating new recipes
   handleCreateRecipe = (recipe) => {
     // console.log(recipe)
@@ -109,6 +119,7 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+
   // component did mount life cycle
   componentDidMount() {
     this.fetchRecipes()
@@ -126,6 +137,7 @@ class App extends Component {
           recipes={this.state.recipes}
           handleCheck={this.handleCheck}
           handleDelete={this.handleDelete}
+          showRecipe={this.showRecipe}
           currentArray="recipes"
         />
       </div>
