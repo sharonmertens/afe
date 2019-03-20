@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      recipes: []
+      recipes: [],
+      shownRecipe: ''
     }
   }
 
@@ -25,11 +26,7 @@ class App extends Component {
   // show recipe
   showRecipe = (recipe) => {
     console.log('show recipe is running')
-    fetch(`http://localhost:3000/recipes/${recipe}`)
-    .then(data => data.json())
-    .then(jData => {
-      console.log(jData)
-    })
+    this.setState({ shownRecipe: recipe})
   }
 
   // creating new recipes
@@ -141,6 +138,7 @@ class App extends Component {
           handleDelete={this.handleDelete}
           showRecipe={this.showRecipe}
           currentArray="recipes"
+          shownRecipe={this.state.shownRecipe}
         />
       </div>
     )

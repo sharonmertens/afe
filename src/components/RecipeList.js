@@ -6,7 +6,7 @@ class RecipeList extends Component {
   render () {
     return (
       <div className="recipe-list">
-        
+
         { this.props.recipes.map((recipe, index) => {
           return (
             <Recipe
@@ -17,6 +17,7 @@ class RecipeList extends Component {
               handleDelete={this.props.handleDelete}
               showRecipe={this.props.showRecipe}
               currentArray="recipes"
+              shownRecipe={this.props.shownRecipe}
             />
           )
         })}

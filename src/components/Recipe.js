@@ -41,6 +41,8 @@ class Recipe extends Component {
           <div className="name-recipe">
             <h3 className="name" onClick={() => this.props.showRecipe(this.props.recipe._id)}> {this.props.recipe.name}</h3>
           </div>
+        { this.props.shownRecipe === this.props.recipe._id ?
+        <div>
         <h3>Ingredients: {this.props.recipe.ingredients}</h3>
         <h3>Directions: {this.props.recipe.directions}</h3>
         <img className="photo" src={this.props.recipe.image} alt={this.props.recipe.name}/>
@@ -49,6 +51,8 @@ class Recipe extends Component {
         { /* button click changes static state to false to show edit component */}
         <button onClick={this.changeStaticState}>Edit Recipe</button>
         <button onClick={() => this.props.handleDelete(this.props.recipe._id, this.props.arrayIndex, this.props.currentArray)}>Delete Recipe</button>
+        </div>
+        : '' }
 
         </div> :
 

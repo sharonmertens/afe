@@ -79,6 +79,7 @@ class Form extends Component {
       <div className="text">
       Add a new recipe:
         <form onSubmit={this.handleSubmit}>
+        <div className="input-name">
           <input
             type="text"
             placeholder="name your dish"
@@ -86,6 +87,7 @@ class Form extends Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
+        </div>
 
           <input
             type="text"
@@ -102,7 +104,7 @@ class Form extends Component {
             value={this.state.directions}
             onChange={this.handleChange}
           />
-          
+
           <input
             type="text"
             placeholder="photo"
