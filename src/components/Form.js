@@ -7,6 +7,7 @@ class Form extends Component {
       name: '',
       ingredients: '',
       directions: '',
+      image: '',
       // variable to identify if the form is benig used to add a new recipe or edit an existing recipe
       submit: 'Add'
     }
@@ -31,7 +32,8 @@ class Form extends Component {
           _id: this.props.recipe._id,
           name: this.state.name,
           ingredients: this.state.ingredients,
-          directions: this.state.directions
+          directions: this.state.directions,
+          image: this.state.image
         }
         // send data to handleCheck to update recipe details
         this.props.handleCheck(updatedRecipe, this.props.arrayIndex, 'recipes')
@@ -46,6 +48,7 @@ class Form extends Component {
       name: 'Name',
       ingredients: 'Ingredients',
       directions: 'Directions',
+      image: 'Image',
       submit: 'Add'
     })
   }
@@ -60,6 +63,7 @@ class Form extends Component {
         name: this.props.recipe.name,
         ingredients: this.props.recipe.ingredients,
         directions: this.props.recipe.directions,
+        image: this.props.recipe.image,
         submit: 'Update'
       })
     }
@@ -73,11 +77,11 @@ class Form extends Component {
   render () {
     return (
       <div className="form">
-
+      Add a new recipe:
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            placeholder="name"
+            placeholder="name your dish"
             id="name"
             value={this.state.name}
             onChange={this.handleChange}
@@ -99,6 +103,14 @@ class Form extends Component {
             onChange={this.handleChange}
           />
           <br/>
+          <input
+            type="text"
+            placeholder="photo"
+            id="image"
+            value={this.state.image}
+            onChange={this.handleChange}
+          />
+          <br />
           <button onClick={this.props.changeStaticState}>Cancel</button>
           <button type="submit">{this.state.submit}</button>
         </form>

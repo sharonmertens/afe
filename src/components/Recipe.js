@@ -41,6 +41,7 @@ class Recipe extends Component {
         <h3 onClick={() => this.props.showRecipe(this.props.recipe._id)}>Name: {this.props.recipe.name}</h3>
         <h3>Ingredients: {this.props.recipe.ingredients}</h3>
         <h3>Directions: {this.props.recipe.directions}</h3>
+        <img className="photo" src={this.props.recipe.image} alt={this.props.recipe.name}/>
         <br/>
 
         { /* button click changes static state to false to show edit component */}
