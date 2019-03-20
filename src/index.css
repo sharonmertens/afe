@@ -25,3 +25,34 @@ code {
   margin: 20px;
   width: 300px;
 }
+
+.name {
+  text-decoration: underline;
+}
+
+/* .recipe-show {
+  flex: inline;
+
+} */
+
+.recipe-name {
+  resize: both;
+  overflow: auto;
+  border: 2px solid;
+  padding: 20px;
+  width: 300px;
+}
+
+/* #name {
+  width: 300px;
+
+}  */
+
+/* #ingredients {
+  width: 600px;
+
+} */
+
+/* #directions {
+  width: 800px;
+} */

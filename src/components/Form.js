@@ -76,7 +76,7 @@ class Form extends Component {
 
   render () {
     return (
-      <div className="form">
+      <div className="text">
       Add a new recipe:
         <form onSubmit={this.handleSubmit}>
           <input
@@ -86,7 +86,7 @@ class Form extends Component {
             value={this.state.name}
             onChange={this.handleChange}
           />
-          <br/>
+
           <input
             type="text"
             placeholder="ingredients"
@@ -94,7 +94,7 @@ class Form extends Component {
             value={this.state.ingredients}
             onChange={this.handleChange}
           />
-          <br/>
+
           <input
             type="text"
             placeholder="directions"
@@ -102,7 +102,7 @@ class Form extends Component {
             value={this.state.directions}
             onChange={this.handleChange}
           />
-          <br/>
+          
           <input
             type="text"
             placeholder="photo"
