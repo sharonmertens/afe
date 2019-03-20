@@ -128,7 +128,7 @@ class App extends Component {
   render() {
     return (
       <div className="main-container">
-        <h1>Recipes Frontend</h1>
+        <h1>Recipes</h1>
         <Header />
         <Form
           handleCreateRecipe={this.handleCreateRecipe}
