@@ -16,7 +16,7 @@ class App extends Component {
   // fetching our api data
   fetchRecipes = () => {
     console.log('fetch recipes is running')
-    fetch('http://localhost:3000/recipes')
+    fetch('http://peaceful-ocean-53976.herokuapp.com/recipes')
     .then(data => data.json())
     .then(jData => {
       this.setState({ recipes: jData })
@@ -87,7 +87,7 @@ class App extends Component {
   // edit recipe
   editRecipe = (recipe, index) => {
     console.log(JSON.stringify(recipe))
-    fetch(`http://localhost:3000/recipes/${recipe._id}`, {
+    fetch(`http://peaceful-ocean-53976.herokuapp.com/recipes/${recipe._id}`, {
       body: JSON.stringify(recipe),
       method: 'PUT',
       headers: {
@@ -107,7 +107,7 @@ class App extends Component {
 
   // delete recipe
   handleDelete = (_id, arrayIndex, currentArray) => {
-    fetch(`http://localhost:3000/recipes/${_id}`, {
+    fetch(`http://peaceful-ocean-53976.herokuapp.com/recipes/${_id}`, {
       method: 'DELETE'
     })
     .then(data => {
