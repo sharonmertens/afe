@@ -32,7 +32,7 @@ class App extends Component {
   // creating new recipes
   handleCreateRecipe = (recipe) => {
     // console.log(recipe)
-    fetch('http://localhost:3000/recipes', {
+    fetch('http://peaceful-ocean-53976.herokuapp.com/recipes', {
       body: JSON.stringify(recipe),
       method: 'POST',
       headers: {
