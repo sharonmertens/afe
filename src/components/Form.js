@@ -88,7 +88,7 @@ class Form extends Component {
             onChange={this.handleChange}
           />
         </div>
-
+        <div className="input-ingredients">
           <input
             type="text"
             placeholder="ingredients"
@@ -96,7 +96,8 @@ class Form extends Component {
             value={this.state.ingredients}
             onChange={this.handleChange}
           />
-
+        </div>
+        <div className="input-directions">
           <input
             type="text"
             placeholder="directions"
@@ -104,7 +105,8 @@ class Form extends Component {
             value={this.state.directions}
             onChange={this.handleChange}
           />
-
+        </div>
+        <div className="input-photo">
           <input
             type="text"
             placeholder="photo"
@@ -112,6 +114,7 @@ class Form extends Component {
             value={this.state.image}
             onChange={this.handleChange}
           />
+          </div>
           <br />
           <button onClick={this.props.changeStaticState}>Cancel</button>
           <button type="submit">{this.state.submit}</button>

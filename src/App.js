@@ -126,7 +126,7 @@ class App extends Component {
     return (
       <div className="main-container">
         <h1>MERTENS-TEITELMAN FAMILY RECIPES</h1>
-        <p>One place for all our family traditions and flavors</p>
+        <h3>One place for all our family traditions and flavors</h3>
 
         <Header />
         <Form
